@@ -1,8 +1,8 @@
 %%%import CSV files produced in gorilla
 clear all
 %Emostroop
-cd C:/Users/bj273/Desktop/Gorilla_Data/
-RMfile= fopen('data_exp_2817-v3_task-alqf.csv');
+cd C:/Users/bj273/Desktop/'Jamyang Project'/Gorilla/
+RMfile= fopen('data_exp_5170-v4_task-m9ga.csv');
 RM=textscan(RMfile,'%s %s %q %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %s %q %s %s %s %s %s %s %s','delimiter', ',')
 fclose(RMfile);
 RM=RM';
@@ -21,7 +21,7 @@ RM=RM';
 
 trials=12;
 
-subjects={'s02', 's03', 's04', 's05', 's06', 's08', 's09', 's11','s12', 's13'};
+%subjects={'s02', 's03', 's04', 's05', 's06', 's08', 's09', 's11','s12', 's13'};
 
 displayed=find(ismember(RM{36,1},'Displayed'));
 RespImagined=find(ismember(RM{36,1},'Imagined'));
@@ -32,8 +32,8 @@ imagined=find(ismember(RM{51,1},'Imagined'));
 spoken=find(ismember(RM{52,1},'Speak'));
 thought=find(ismember(RM{52,1},'Think'));
 
-for s=1:10
-    sub=subjects(s);
+for s=1
+    sub='BLIND'
     %sub='s02'
     
     idx_s = find(ismember(RM{13,1},sub));
